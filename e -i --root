@@ -1,0 +1,2 @@
+[33m037300a[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m Security fix: Remove hardcoded API key and use environment variables
+[33mf3346c5[m Initial commit: EcoLens - AI-Powered Sustainability Lifecycle Tracker
