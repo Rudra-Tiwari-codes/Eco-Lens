@@ -11,6 +11,10 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
 from pydantic import BaseModel
 from openai import AsyncOpenAI
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 app = FastAPI(
     title="EcoLens API",
@@ -35,7 +39,9 @@ app.mount("/static", StaticFiles(directory=static_dir), name="static")
 # Initialize OpenAI client
 def get_openai_client():
     """Initialize OpenAI client with API key."""
-    api_key = "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"
+    api_key = os.getenv("OPENAI_API_KEY")
+    if not api_key:
+        raise ValueError("OPENAI_API_KEY environment variable is required")
     return AsyncOpenAI(api_key=api_key)
 
 class ItemAnalysisRequest(BaseModel):

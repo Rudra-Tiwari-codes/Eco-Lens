@@ -41,8 +41,12 @@ EcoLens is an AI-powered web application that reveals the hidden environmental i
    ```
 
 5. **Set up your OpenAI API key:**
-   - Edit `src/ecolens/main.py`
-   - Replace the API key in the `get_openai_client()` function
+   - Copy `env.example` to `.env`
+   - Add your OpenAI API key to the `.env` file:
+     ```
+     OPENAI_API_KEY=your_actual_api_key_here
+     ```
+   - Get your API key from: https://platform.openai.com/api-keys
 
 6. **Run the application:**
    ```bash
@@ -83,13 +87,12 @@ EcoLens/
 ## 🔧 Configuration
 
 ### API Key Setup
-Edit `src/ecolens/main.py` and update the OpenAI API key:
-```python
-def get_openai_client():
-    """Initialize OpenAI client with API key."""
-    api_key = "your-openai-api-key-here"
-    return AsyncOpenAI(api_key=api_key)
-```
+1. Create a `.env` file in the project root
+2. Add your OpenAI API key:
+   ```
+   OPENAI_API_KEY=your_actual_api_key_here
+   ```
+3. The application will automatically load the API key from the environment variable
 
 ### Customization
 - **Scoring System**: Modify the scoring functions in `main.py`
