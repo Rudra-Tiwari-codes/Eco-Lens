@@ -44,7 +44,7 @@ EcoLens is an AI-powered web application that reveals the hidden environmental i
    - Copy `env.example` to `.env`
    - Add your OpenAI API key to the `.env` file:
      ```
-     OPENAI_API_KEY=your_actual_api_key_here
+     OPENAI_API_KEY=your_api_key_here
      ```
    - Get your API key from: https://platform.openai.com/api-keys
 
@@ -90,7 +90,7 @@ EcoLens/
 1. Create a `.env` file in the project root
 2. Add your OpenAI API key:
    ```
-   OPENAI_API_KEY=your_actual_api_key_here
+   OPENAI_API_KEY=your_api_key_here
    ```
 3. The application will automatically load the API key from the environment variable
 

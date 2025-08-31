@@ -51,22 +51,17 @@ def main():
     if not run_command(f"{pip_cmd} install -r requirements.txt", "Installing dependencies"):
         sys.exit(1)
     
-    # Check if main.py exists and has API key
+    # Check if main.py exists
     main_py_path = "src/ecolens/main.py"
     if os.path.exists(main_py_path):
-        with open(main_py_path, 'r') as f:
-            content = f.read()
-            if "sk-proj-" in content:
-                print("⚠️  API key detected in main.py - please update with your own key")
-            else:
-                print("⚠️  Please add your OpenAI API key to src/ecolens/main.py")
+        print("✅ main.py found")
     else:
         print("❌ main.py not found")
         sys.exit(1)
     
     print("\n🎉 Setup completed successfully!")
     print("\nNext steps:")
-    print("1. Add your OpenAI API key to src/ecolens/main.py")
+    print("1. Copy env.example to .env and add your OpenAI API key")
     print("2. Run 'python run.py' to start the server")
     print("3. Open http://127.0.0.1:8000 in your browser")
     print("\nOr use 'start.bat' on Windows for easy startup")

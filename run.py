@@ -11,9 +11,12 @@ import os
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'src'))
 
 from ecolens.main import app
-import uvicorn
+
+# For Vercel deployment
+app.debug = False
 
 if __name__ == "__main__":
+    import uvicorn
     print("Starting EcoLens API Server...")
     print("Web interface: http://127.0.0.1:8000")
     uvicorn.run(app, host="127.0.0.1", port=8000)
